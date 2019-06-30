@@ -4,18 +4,16 @@ class Scheduled extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      message: '',
-      text: false,
-      email: false,
-      push: false,
-      now: false,
-      schedule: false,
     }
   }
   render() {
     return (
       <div>
-        Scheduled
+        {this.props.messages.map((item, index) =>
+          <div key={index}>
+            {item.input}
+          </div>
+        )}
       </div>
     )
   }

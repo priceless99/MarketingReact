@@ -1,4 +1,17 @@
-footer {
-  text-decoration: none;
-  color: green
+.header{
+  width: 33vw;
+  height: 10vh;
+  background-color: blue;
+  color: white;
+}
+
+.messageInput{
+  width: 99vw;
+  height: 20vh;
+  border-style: solid;
+  border-color: black
+}
+button{
+  background-color: blue;
+  color: white
 }
