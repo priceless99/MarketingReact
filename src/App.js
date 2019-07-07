@@ -4,13 +4,15 @@ import Home from './components/Home'
 import Scheduled from './components/Scheduled'
 import NewMessage from './components/NewMessage'
 import axios from 'axios'
+import Button from '@material-ui/core/Button';
 class App extends React.Component {
 
   constructor(props) {
     super(props)
     this.state = {
       messages: [],
-      customers: []
+      customers: [],
+      pageNum: 'home',
     }
   }
   componentDidMount() {
@@ -45,9 +47,9 @@ class App extends React.Component {
 
 
         <div>
-          <Link to='/'> <button className='header' onClick={() => this.setState({ pageNum: 'home' })}>Home</button></Link>
-          <Link to='/scheduled'> <button className='header' onClick={() => this.setState({ pageNum: 'scheduled' })} >Scheduled</button></Link>
-          <Link to='/newmessage'><button className='header' onClick={() => this.setState({ pageNum: 'newmessage' })} >New Message</button></Link>
+          <Link to='/'> <Button variant={`${this.state.pageNum === 'home' ? 'contained' : ''}`} className='header' onClick={() => this.setState({ pageNum: 'home' })}>Home</Button></Link>
+          <Link to='/scheduled'> <Button variant={`${this.state.pageNum === 'scheduled' ? 'contained' : ''}`} className='header' onClick={() => this.setState({ pageNum: 'scheduled' })} >Scheduled</Button></Link>
+          <Link to='/newmessage'><Button variant={`${this.state.pageNum === 'newmessage' ? 'contained' : ''}`} className='header' onClick={() => this.setState({ pageNum: 'newmessage' })} >New Message</Button></Link>
         </div>
 
         <Switch>
