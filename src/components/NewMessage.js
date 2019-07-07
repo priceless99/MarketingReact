@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Switch from '@material-ui/core/Switch';
+
 class NewMessage extends React.Component {
   constructor(props) {
     super(props)
@@ -24,13 +26,13 @@ class NewMessage extends React.Component {
       <div style={{ textAlign: 'center' }}>
 
         <h2>Enter a new message:</h2>
-        <div><textarea className='messageInput' placeholder='Type here...' value={this.state.input} onChange={e => this.setState({ input: e.target.value })} cols="30" rows="10"></textarea>
+        <div><textarea id="newMsg" className='messageInput' placeholder='Type here...' value={this.state.input} onChange={e => this.setState({ input: e.target.value })} cols="30" rows="10"></textarea>
         </div>
         <div>
           <h2>Send to:</h2>
-          <p>Text:<input onChange={(e) => this.setState({ text: e.target.checked })} value={this.state.text} type="checkbox" /></p>
-          <p>Email:<input onChange={(e) => this.setState({ email: e.target.checked })} value={this.state.email} type="checkbox" /></p>
-          <p>Push Notification:<input onChange={(e) => this.setState({ push: e.target.checked })} value={this.state.push} type="checkbox" /></p>
+          <p id="switches">Text:<input onChange={(e) => this.setState({ text: e.target.checked })} value={this.state.text} type="checkbox" /></p>
+          <p id="switches">Email:<input onChange={(e) => this.setState({ email: e.target.checked })} value={this.state.email} type="checkbox" /></p>
+          <p id="switches">Push Notification:<input onChange={(e) => this.setState({ push: e.target.checked })} value={this.state.push} type="checkbox" /></p>
         </div>
         <div>
           <h3>When to send the messages:</h3>
