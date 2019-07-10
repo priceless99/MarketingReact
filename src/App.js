@@ -9,6 +9,8 @@ import EventNote from '@material-ui/icons/EventNote';
 // import PersonOutline from '@material-ui/icons/PersonOutline';
 import Home from '@material-ui/icons/Home'
 import Message from '@material-ui/icons/Message';
+import Footer from './components/Footer';
+import AppBar from './components/AppBar'
 
 
 
@@ -40,27 +42,37 @@ class App extends React.Component {
 
   }
 
+  deleteMessages = (index) =>{
+    const array = this.state.messages.slice()
+    array.splice(index,1)
+    this.setState({messages: array})
+  }
+
   updateMessages = (val) => {
     axios.post(`https://5d17ee708060b10014297de6.mockapi.io/messages`, val)
       .then(res => this.setState({ messages: [...this.state.messages, val] }))
       .catch(err => window.alert('cannot post'))
 
   }
-
+  
 
   render() {
     return (
       <BrowserRouter>
+      <AppBar />
+
 
     
 
         <Switch>
           <Route exact path='/' render={() => <Homes customers={this.state.customers} />} />
           <Route path='/newmessage' render={() => <NewMessage updateMessages={this.updateMessages} />} />
-          <Route path='/scheduled' render={() => <Scheduled messages={this.state.messages} />} />
+          <Route path='/scheduled' render={() => <Scheduled messages={this.state.messages} deleteMessages={this.deleteMessages} />} />
         </Switch>
 
-        <footer>
+
+
+        <Footer>
         <div id='grad1'>
           <Link to='/scheduled'> <Button variant={`${this.state.pageNum === 'scheduled' ? 'contained' : ''}`} className='header iconColor' onClick={() => this.setState({ pageNum: 'scheduled' })}>
            <div className='but'>
@@ -81,7 +93,7 @@ class App extends React.Component {
              {/* Message */}
            </div> </Button></Link>
         </div>
-        </footer>
+        </Footer>
 
       </BrowserRouter >
 

@@ -22,29 +22,29 @@ margin: 0 0 -2.5em
   font-size: 2rem !important
 
 }
-html{ height:100%; }
-body{ min-height:100%; padding:0; margin:0; position:relative; }
-header{ height:50px; background:lightcyan; }
+// html{ height:100%; }
+// body{ min-height:100%; padding:0; margin:0; position:relative; }
+// // header{ height:50px; background:lightcyan; }
 
 
-/* Trick: */
-body {
-  position: relative;
-}
+// /* Trick: */
+// body {
+//   position: relative;
+// }
 
-body::after {
-  content: '';
-  display: block;
-  height: 50px; /* Set same as footer's height */
-}
+// body::after {
+//   content: '';
+//   display: block;
+//   height: 50px; /* Set same as footer's height */
+// }
 
-footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  height: 50px;
-  margin-bottom: -1px
-}
+// footer {
+//   position: fixed;
+//   bottom: 0;
+//   width: 100%;
+//   height: 50px;
+//   margin-bottom: -1px
+// }
 #grad1 {
   background-color:#f7f5f3;
   border-style: solid;
@@ -53,7 +53,7 @@ footer {
 
 }
 .header {
-  height: 6vh
+  background-color: transparent !important
 }
 
 a {
@@ -62,10 +62,41 @@ a {
 .iconColor {
   border-radius: 0px !important;
   color: #9c9996 !important;
+  height: 6vh
 
 }
 .MuiButton-contained {
   color: darkblue !important;
   box-shadow: 0px !important;
   background-color: white !important;
+}
+.pad {
+  padding: 1.5em;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width:100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.modal-main {
+  position:fixed;
+  background: white;
+  width: 80%;
+  height: auto;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+}
+
+.display-block {
+  display: block;
+}
+
+.display-none {
+  display: none;
 }
