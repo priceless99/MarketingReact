@@ -1,7 +1,7 @@
 import React from 'react'
 import CustomerDetails from './CustomerDetails'
 
-class Home extends React.Component {
+class Homes extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -11,12 +11,25 @@ class Home extends React.Component {
   render() {
     return (
       <div>
-        <h2>Databases:</h2>
+
+        <div className='pad'>
+        <h2 className="ui header">
+           <i className="database icon"></i>
+           <div class="content">
+              Database
+            </div>
+        </h2>
+
+        </div>
         <div>
-          <button onClick={() => this.state.showCustomer ? this.setState({ showCustomer: false }) : this.setState({ showCustomer: true })}>Customers</button>
-          {this.state.showCustomer && this.props.customers.map((item, index) =>
-            <CustomerDetails key={index} name={item.name} phonenumber={item.phonenumber} email={item.email} />
+          <button className="ui basic button " onClick={() => this.state.showCustomer ? this.setState({ showCustomer: false }) : this.setState({ showCustomer: true })}>Customers</button>
+         <div className="ui vertical fluid menu"> {this.state.showCustomer && this.props.customers.map((item, index) =>
+            <div className="item">
+              <CustomerDetails key={index} name={item.name} phonenumber={item.phonenumber} email={item.email} /> 
+              
+              </div>
           )}
+          </div>
         </div>
 
       </div>
@@ -24,4 +37,4 @@ class Home extends React.Component {
   }
 }
 
-export default Home
+export default Homes
