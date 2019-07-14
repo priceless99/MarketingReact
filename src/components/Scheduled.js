@@ -42,18 +42,19 @@ hideModal = () => {
 }
   render() {
     return (
-      <div>
-            <div className='pad'>
-        <h2 className="ui  center aligned icon header">
-           <i className="calendar alternate outline icon"></i>
-              <div className="content">
-                Scheduled
-              </div>
+      <div className='bodyPad'>
+       <div className='pad'>
+        <h2 className="ui header">
+           <i className="calendar alternate icon"></i>
+           <div className="content">
+              Scheduled
+            </div>
         </h2>
+
         </div>
         {this.props.messages.map((item, index) =>
-          <div key={index}>
-                <div className="ui vertical fluid menu">
+          <div className='itemPad' key={index}>
+                <div className="ui vertical fluid menu ">
             <div className="item" >
             {item.input}
             

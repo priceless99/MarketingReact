@@ -1,6 +1,6 @@
 .header{
   width: 33vw;
-  height: 10vh;
+  // height: 10vh;
   background-color: blue;
   color: white;
 }
@@ -55,7 +55,7 @@ margin: 0 0 -2.5em
 
 }
 .header {
-  background-color: transparent !important
+  background-color: transparent !important;
 }
 
 a {
@@ -101,4 +101,17 @@ a {
 
 .display-none {
   display: none;
+}
+.extendTitle{
+  width: 100% !important;
+  height: 4.5vh 
+}
+.bodyPad{
+  padding: 0 .75em 0 .75em
+}
+.itemPad {
+  padding-bottom: .5em
+}
+.headPad {
+  padding-top: 1.5em !important
 }

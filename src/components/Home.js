@@ -10,7 +10,7 @@ class Homes extends React.Component {
   }
   render() {
     return (
-      <div>
+      <div className='bodyPad'>
 
         <div className='pad'>
         <h2 className="ui header">
