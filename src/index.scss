@@ -115,3 +115,11 @@ a {
 .headPad {
   padding-top: 1.5em !important
 }
+.ui.fullscreen.modal {
+  left: auto !important;
+  margin: 1em auto !important;
+}
+.modal {
+  top: 22em !important;
+  height: 0 !important;
+}
