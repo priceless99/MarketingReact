@@ -13,21 +13,21 @@ class Homes extends React.Component {
       <div className='bodyPad'>
 
         <div className='pad'>
-        <h2 className="ui header">
-           <i className="database icon"></i>
-           <div class="content">
+          <h2 className="ui header">
+            <i className="database icon"></i>
+            <div class="content">
               Database
             </div>
-        </h2>
+          </h2>
 
         </div>
         <div>
           <button className="ui basic button " onClick={() => this.state.showCustomer ? this.setState({ showCustomer: false }) : this.setState({ showCustomer: true })}>Customers</button>
-         <div className="ui vertical fluid menu"> {this.state.showCustomer && this.props.customers.map((item, index) =>
+          <div className="ui vertical fluid menu"> {this.state.showCustomer && this.props.customers.map((item, index) =>
             <div className="item">
-              <CustomerDetails key={index} name={item.name} phonenumber={item.phonenumber} email={item.email} /> 
-              
-              </div>
+              <CustomerDetails key={index} item={item} />
+
+            </div>
           )}
           </div>
         </div>

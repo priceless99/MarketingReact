@@ -79,7 +79,7 @@ a {
 .modal {
   position: fixed;
   top: 0;
-  left: 0;
+  // left: 0;
   width:100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.6);
@@ -114,4 +114,16 @@ a {
 }
 .headPad {
   padding-top: 1.5em !important
+}
+.ui.fullscreen.modal {
+  left: auto !important;
+  margin: 1em auto !important;
+}
+.modal {
+  top: 22em !important;
+  height: 0 !important;
+}
+.scheduledIcon {
+  display: inline-flex;
+  float: right
 }
