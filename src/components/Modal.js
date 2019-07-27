@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Header, Modal } from 'semantic-ui-react'
+import { Header, Modal, Icon } from 'semantic-ui-react'
 
 class ModalModalExample extends React.Component {
   constructor(props) {
@@ -16,17 +16,25 @@ class ModalModalExample extends React.Component {
     this.props.modal(item)                    // using the function in parent component, passing it down as prop
     // to setState of the users input,
   }
+  envelopeIcon = () => (
+    <div>
+      <Icon name='envelope open outline icon' />
+    </div>
+  )
 
   render() {
     return (
 
-      <Modal trigger={<Button onClick={this.details}>SHOW</Button>} >
+      <Modal trigger={<i onClick={this.details}><this.envelopeIcon /></i>} closeIcon >
         <Modal.Content image>
           <Modal.Description>
-            <Header>Default Profile Image</Header>
+            <Header>{this.props.showText.input}</Header>
 
+           <p> Send Method: {this.props.showText.text ? 'Text' : ''},
+                          {this.props.showText.email ? 'Email' : ''}
+                          {this.props.showText.push ? 'Push' : ''}
+          </p>
 
-            <h1>{this.props.showText.input}</h1>
             {/* // attempt at returning JSX to this child Component but can't pass through
                                               current state to show user input, email, etc. */}
 

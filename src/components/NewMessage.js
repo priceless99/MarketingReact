@@ -93,7 +93,7 @@ class NewMessage extends React.Component {
 
         <hr id="break"></hr>
         <div>
-          <h2>Set Time</h2>
+          <h3 className="ui header">Set Time</h3>
      
                   <input id="radio" type="radio"  name="schedule" value='now' onClick={(e) => this.setState({ send: e.target.value })}></input>
                     <label>Now</label>
@@ -105,9 +105,9 @@ class NewMessage extends React.Component {
           <div id="dateTime">
 
               < DateForm changeTime = {this.changeTime} changeDate={this.changeDate} />
-
+              <div className="itempad"> 
               < DropdownExampleSelection changeFrequency={this.changeFrequency}  />
-
+              </div>
               
   
           </div>

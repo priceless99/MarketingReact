@@ -8,6 +8,7 @@ var style = {
 
 var phantom = {
   width: '100%',
+  height: '6vh'
 }
 
 function Footer({ children }) {

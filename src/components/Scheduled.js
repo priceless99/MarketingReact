@@ -2,18 +2,10 @@ import React from 'react'
 import ConfirmExampleConfirm from './Confirm'
 import ModalModalExample from './Modal'
 
-const Modal = ({ handleClose, show, children }) => {
-  const showHideClassName = show ? "modal display-block" : "modal display-none";
-
-  return (
-    <div className={showHideClassName}>
-      <section className="modal-main">
-        {children}
-        <button className='ui button' style={{ textAlign: 'center' }} onClick={handleClose}>close</button>
-      </section>
-    </div>
-  );
-};
+let itemStyle = {
+display: 'inline-flex',
+float: 'right'
+}
 
 class Scheduled extends React.Component {
   constructor(props) {
@@ -28,6 +20,7 @@ class Scheduled extends React.Component {
       date: '',
       time: '',
       frequency: '',
+      subject: '',
     }
   }
   showModal = () => {
@@ -53,29 +46,12 @@ class Scheduled extends React.Component {
       date: item.date,
       time: item.time,
       frequency: item.frequency,
+      subject: item.subject
     })
-    console.log(item.input)     // Can't figure out how to return this not undefined
+    console.log(item.input)     
   }
 
-  // showText = () => {               // Initial attempt to return JSX within the modal itself but I need
-  // to find a way to pass user inputs through above function first
 
-  //     return (
-  //     <div><div>
-  //     <h1>{this.state.input}</h1>
-
-
-  //   </div>
-  //   <br />
-  //   <div className='fluid ui horizontal menu'>
-  //       <div className='item'>
-  //       Send Method: {this.state.text ? 'Text' : ''}
-  //                     {this.state.email ? 'Email' : ''}
-  //                     {this.state.push ? 'Push' : ''}
-  //                     </div>
-  //     </div></div>
-  //   )
-  // }
   render() {
     return (
       <div className='bodyPad'>
@@ -91,16 +67,17 @@ class Scheduled extends React.Component {
         {this.props.messages.map((item, index) =>
           <div className='itemPad' key={index}>
             <div className="ui vertical fluid menu ">
-              <div className="item" >
+              <div className="item">
                 {item.input}
-
                 {/* <i onClick={()=>this.props.deleteMessages(index)} className="trash alternate outline icon"></i> */}
-
+                <div style={itemStyle}>
                 <ConfirmExampleConfirm delete={this.delete} />
-                <ModalModalExample showText={this.state} modal={() => this.modal(item)} />
+                <ModalModalExample showText={this.state} modal={() => this.modal(item)} />   
+                </div>
+                {/* // now the modal is actually taking in this items specific inputs and state */}
 
 
-                <i onClick={() => {
+                {/* <i onClick={() => {
                   this.setState({
                     input: item.input,
                     text: item.text,
@@ -115,7 +92,7 @@ class Scheduled extends React.Component {
                   console.log(this.state.input)
                 }
 
-                } class="envelope open outline icon" ></i>
+                } class="envelope open outline icon" ></i> */}
 
 
               </div>
@@ -124,7 +101,7 @@ class Scheduled extends React.Component {
           </div>
 
         )}
-        <Modal show={this.state.show} handleClose={this.hideModal}>
+        {/* <Modal show={this.state.show} handleClose={this.hideModal}>
           <div>
             <h1>{this.state.input}</h1>
 
@@ -138,7 +115,7 @@ class Scheduled extends React.Component {
               {this.state.push ? 'Push' : ''}
             </div>
           </div>
-        </Modal>
+        </Modal> */}
       </div>
     )
   }
