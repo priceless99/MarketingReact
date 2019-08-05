@@ -29,13 +29,30 @@ class ModalModalExample extends React.Component {
         <Modal.Content image>
           <Modal.Description>
             <Header>Subject: {this.props.showText.subject}</Header>
-            <h4>Message: {this.props.showText.input}</h4>
-            <p> Send Method: {this.props.showText.text ? 'Text' : ''},
-                          {this.props.showText.email ? 'Email' : ''}
-              {this.props.showText.push ? 'Push' : ''}
-            </p>
-            <p>Schedule: {this.props.showText.send === 'now' ? 'Now' : `${this.props.showText.date} at ${this.props.showText.time} ${this.props.showText.frequency} `} </p>
 
+
+            <p>
+              <span className="bold">Message:</span>  {this.props.showText.input}
+
+            </p>
+
+            <p> <span className="bold">Send Method:</span> {this.props.showText.text ? 'Text' : ''} &nbsp;
+                          {this.props.showText.email ? 'Email' : ''} &nbsp;
+                          {this.props.showText.push ? 'Push' : ''}
+            </p>
+
+
+            <p>
+              {this.props.showText.send === 'now' ? "Schedule: Now" :
+                <div> <span className="bold">Time:</span>&nbsp;
+            {this.props.showText.time}
+                  <div>
+                    <span className="bold">Frequency: </span>  &nbsp;
+            {this.props.showText.frequency}</div>
+                </div>
+
+              }
+            </p>
             {/* // attempt at returning JSX to this child Component but can't pass through
                                               current state to show user input, email, etc. */}
 

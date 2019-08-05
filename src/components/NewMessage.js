@@ -12,7 +12,7 @@ class NewMessage extends React.Component {
       text: false,
       email: false,
       push: false,
-      send: 'now',
+      send: 'Now',
       date: '',
       time: '',
       frequency: '',
@@ -94,12 +94,16 @@ class NewMessage extends React.Component {
         <hr id="break"></hr>
         <div>
           <h3 className="ui header">Set Time</h3>
-     
-                  <input id="radio" type="radio"  name="schedule" value='now' onClick={(e) => this.setState({ send: e.target.value })}></input>
+          <div class="ui radio checkbox">
+                  <input id="radio" type="radio"  name="schedule" value='Now' onClick={(e) => this.setState({ send: e.target.value })}></input>
                     <label>Now</label>
+                    </div>
               </div>
-                <input id="radio" type="radio" name="schedule" value="schedule" onClick={(e) => this.setState({ send: e.target.value })}></input>
+          <div class="ui radio checkbox">
+
+                <input id="radio" type="radio" name="schedule" value="schedule"  onClick={(e) => this.setState({ send: e.target.value })}></input>
                    <label>Schedule</label>
+                   </div>
         
         {this.state.send === 'schedule' && (
           <div id="dateTime">
