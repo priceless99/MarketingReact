@@ -3,8 +3,8 @@ import ConfirmExampleConfirm from './Confirm'
 import ModalModalExample from './Modal'
 
 let itemStyle = {
-display: 'inline-flex',
-float: 'right'
+  display: 'inline-flex',
+  float: 'right'
 }
 
 class Scheduled extends React.Component {
@@ -48,7 +48,7 @@ class Scheduled extends React.Component {
       frequency: item.frequency,
       subject: item.subject
     })
-    console.log(item.input)     
+    console.log(item.input)
   }
 
 
@@ -68,11 +68,11 @@ class Scheduled extends React.Component {
           <div className='itemPad' key={index}>
             <div className="ui vertical fluid menu ">
               <div className="item">
-                {item.input}
+                {item.subject}
                 {/* <i onClick={()=>this.props.deleteMessages(index)} className="trash alternate outline icon"></i> */}
                 <div style={itemStyle}>
-                <ConfirmExampleConfirm delete={this.delete} />
-                <ModalModalExample showText={this.state} modal={() => this.modal(item)} />   
+                  <ConfirmExampleConfirm delete={this.delete} item1={item} index1={index} />
+                  <ModalModalExample showText={this.state} modal={() => this.modal(item)} />
                 </div>
                 {/* // now the modal is actually taking in this items specific inputs and state */}
 
