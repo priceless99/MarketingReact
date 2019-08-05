@@ -28,17 +28,34 @@ class ModalModalExample extends React.Component {
       <Modal trigger={<i onClick={this.details}><this.envelopeIcon /></i>} closeIcon >
         <Modal.Content image>
           <Modal.Description>
-            <Header>{this.props.showText.input}</Header>
+            <Header>Subject: {this.props.showText.subject}</Header>
 
-           <p> Send Method: {this.props.showText.text ? 'Text' : ''},
-                          {this.props.showText.email ? 'Email' : ''}
-                          {this.props.showText.push ? 'Push' : ''}
+
+            <p>
+             <span className="bold">Message:</span>  {this.props.showText.input}
+
           </p>
 
+           <p> <span className="bold">Send Method:</span> {this.props.showText.text ? 'Text' : ''} &nbsp;
+                          {this.props.showText.email ? 'Email' : ''} &nbsp;
+                          {this.props.showText.push ? 'Push' : ''}
+          </p>
+      
+
+          <p>
+            {this.props.showText.send === 'now' ? "Schedule: Now" :
+            <div> <span className="bold">Time:</span>&nbsp;
+            {this.props.showText.time} 
+            <div>
+            <span className="bold">Frequency: </span>  &nbsp;
+            {this.props.showText.frequency}</div>
+            </div>
+           
+             }
+          </p>
             {/* // attempt at returning JSX to this child Component but can't pass through
                                               current state to show user input, email, etc. */}
 
-            <p>Is it okay to use this photo?</p>
           </Modal.Description>
         </Modal.Content>
       </Modal>

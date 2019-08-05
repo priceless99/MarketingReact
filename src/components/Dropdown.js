@@ -4,15 +4,15 @@ import { Dropdown } from 'semantic-ui-react'
 const FrequencyOptions = [
   {
     text: 'One Time',
-    value: 'oncetime',
+    value: 'Once',
   },
   {
     text: 'Weekly',
-    value: 'weekly',
+    value: 'Weekly',
   },
   {
     text: 'Monthly',
-    value: 'monthly',
+    value: 'Monthly',
   },
  
 ]

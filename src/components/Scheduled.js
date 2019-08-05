@@ -68,7 +68,7 @@ class Scheduled extends React.Component {
           <div className='itemPad' key={index}>
             <div className="ui vertical fluid menu ">
               <div className="item">
-                {item.input}
+                {item.subject}
                 {/* <i onClick={()=>this.props.deleteMessages(index)} className="trash alternate outline icon"></i> */}
                 <div style={itemStyle}>
                 <ConfirmExampleConfirm delete={this.delete} />
